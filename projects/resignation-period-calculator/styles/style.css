@@ -22,5 +22,5 @@ body {
   justify-content: center;
   width: 100vw;
   height: 100vh;
-  background: #333333;
+  background: url(../assets/bg.jpg) center center / cover no-repeat fixed;
 }

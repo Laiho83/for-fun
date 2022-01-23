@@ -1,30 +1,54 @@
+(function() {
+  var form = {
+    resignationDate: null,
+    init() {
+      this.cacheDom();
+      this.bindEvents();
+      this.renderInit();
+    },
 
-  let inputDate = document.getElementById('resDate');
-  let inputDays = document.getElementById('resDays');
-  let submitForm = document.getElementById('submitForm');
-  let result = document.getElementById('reult');
+    cacheDom() {
+      this.inputDate = document.getElementById('resDate');
+      this.inputDays = document.getElementById('resDays');
+      this.leaveDays = document.getElementById('leaveDays');
+      this.submitForm = document.getElementById('submitForm');
+      this.result = document.getElementById('result');
+    },
 
+    bindEvents() {
+      this.submitForm.addEventListener('click', this.onSubmit.bind(this));
+    },
+    
+    render() {
+      result.value = this.resignationDate.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    },
 
-  const formatYmd = date => date.toISOString().slice(0, 10);    
+    renderInit() {
+      const formatYmd = date => date.toISOString().slice(0, 10);    
+      this.inputDate.defaultValue = formatYmd(new Date());
+    },
 
-  inputDate.defaultValue = formatYmd(new Date());
+    onSubmit(e) {
+      e.preventDefault();
+      this.calculatePeriod().then(d => {
+        d.setDate(d.getDate() + Number(this.inputDays.value));
+        this.resignationDate = d;
+        this.calculateLeaveDays(d);
+        this.render();
+      })
+    },
 
-  submitForm.addEventListener('click', onSubmit);
+    calculatePeriod() {
+      return new Promise((res, rej) => {
+        let d = new Date(this.inputDate.value);
+        res(d);
+      });
+    },
 
-  
+    calculateLeaveDays(d) {
+      let leaveDaysLeft = Math.ceil(Number(this.leaveDays.value) / 12) * Number(d.getMonth()+1);      
+    }
+  };
 
-
-  function onSubmit(e) {
-    e.preventDefault();     
-    let pr = new Promise((res, rej) => {
-      let d = new Date(inputDate.value);
-      res(d);
-    });
-
-    pr.then((d) => {
-      d.setDate(d.getDate() + Number(inputDays.value));
-      reult.value = d.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-
-
-    })
-  }
+  form.init();
+})();

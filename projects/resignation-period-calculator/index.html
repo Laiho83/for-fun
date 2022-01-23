@@ -13,15 +13,22 @@
   <div id="page">
     <form class="form-wrapper">
       <label>
-        Start date:
+        Day of resignation:
         <input type="date" id="resDate">
       </label>
       <label>
-        Number of days
+        Resignation notice period: 
         <input type="number" id="resDays" min="1" value="1">
       </label>
-      <input type="text" id="reult" readonly>
-      <button type="submit" id="submitForm">Submit query</button>
+      <label>
+        Yearly holiday leave left (days):
+        <input type="number" id="leaveDays" min="0" value="0">
+      </label>
+      <label>
+        Official last day at the Company
+        <input type="text" id="result" readonly>
+      </label>
+      <button type="submit" id="submitForm" placeholder="Resignation date">Submit query</button>
     </form>
   </div>
   <script src="js/main.js"></script>

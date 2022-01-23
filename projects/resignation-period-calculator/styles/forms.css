@@ -1,9 +1,9 @@
 .form-wrapper {
   width: 100%;
-  max-width: 300px;
+  max-width: 420px;
   padding: 25px 15px;
   background: #ffffff;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
 }
 
 input::placeholder,
@@ -18,10 +18,10 @@ textarea::placeholder {
 }
 
 input,
-textarea,
-label[for^="file__upload--"] {
+textarea {
   width: 100%;
   height: 50px;
+  margin-top: 5px;
   margin-bottom: 25px;
   padding: 10px;
   font-size: var(--base-font-size);
@@ -43,15 +43,12 @@ label[for^="file__upload--"] {
 input:focus,
 textarea:focus,
 input:focus:hover,
-textarea:focus:hover,
-label[for^="file__upload--"]:hover,
-label[for^="file__upload--"]:focus:hover {
+textarea:focus:hover {
   outline: 0;
 }
 
 input:disabled,
-textarea:disabled
-label[for^="file__upload--"]:disabled {
+textarea:disabled {
   cursor: no-drop;
   background: var(--gray-mid-color);
 }
@@ -76,21 +73,6 @@ textarea {
 
 input[type="file"] {
   display: none;
-}
-
-label[for^="file__upload--"] {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: 500;
-  border: 2px solid var(--black-light-color);
-  color: var(--black-light-color);
-}
-
-label[for^="file__upload--"]:hover {
-  color:  var(--green-color);    
-  border-color:  var(--green-color);  
 }
 
 button {
@@ -124,4 +106,15 @@ button:focus:hover {
 button:disabled {
   cursor: not-allowed;
   background-color: var(--gray-light-color)
+}
+
+label {
+  font-weight: bold;
+}
+
+#result {
+  border: 0;
+  background: var(--orange-color);
+  color: white;
+  font-weight: bold;
 }
