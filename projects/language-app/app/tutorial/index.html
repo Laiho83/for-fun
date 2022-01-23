@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="tut.css">
+  <title>Tutorial</title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="hero-unit">
+      <h1>JS <span>Tutorials</span></h1>
+      <div id="stateModule">
+        Staus: <span class="state-count"></span>
+      </div>
+    </div>
+
+    <div id="peopleModule">
+      <h2>People</h2>
+      <input id="inputPeople" type="text" placholeder="Name">
+      <button id="addPerson">Add Person</button>
+      <ul id="people">
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Template -->
+
+  <li id="template">
+    <span class="people-name"></span>
+    <div class="del">X</div>
+  </li>
+
+  <script type="text/javascript" src="./pubSub.js"></script>
+  <script type="text/javascript" src="./status.js"></script>
+  <script type="text/javascript" src="./revelaingModule.js"></script>
+</body>
+
+</html>

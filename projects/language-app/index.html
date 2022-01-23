@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/ico" sizes="32x32" href="favicon.ico">
+  <title>Learning app</title>
+  <link rel="stylesheet" href="app/style/reset.css">
+  <link rel="stylesheet" href="app/style/variables.css">
+  <link rel="stylesheet" href="app/style/style-base.css">
+  <link rel="stylesheet" href="app/style/forms.css">
+  <link rel="stylesheet" href="app/style/styles.css">
+  <link rel="stylesheet" href="app/style/custom.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul id="navItems" class="nav-items">
+
+      </ul>
+    </nav>
+    <div id="new-item">
+      Add new
+    </div>
+  </header>
+  <div id="main" class="container-inner">
+    <div id="catInput" class="input-wrap">
+      <button id="addCategory">Add</button>
+      <input type="text" id="inputCategory" placeholder="Category name!">
+    </div>
+    <div class="content-wrapper">
+      <div id="cardInput" class="input-wrap">
+        <input type="text" id="inputName" placeholder="Type a name ... !">
+        <label for="upload" class="upload-label">Drag&Drop or choose an image</label>
+        <input type="file" id="upload" name="upload" accept="image/png, image/jpeg">
+        <div class="img-preview">
+          <img id="previewImg" src="assets/img/default.png">
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn" id="addElem">Add element</button>
+        <button class="btn" id="removeElem">Remove element</button>
+        <button class="btn" id="saveCards">Save cards</button>
+      </div>
+      <div class="row" id="output">
+
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>This is the learning flip card app !!!</p>
+  </footer>
+
+  <!-- Template -->
+  <div id="flip-card-default" class="flip-card">
+    <div class="flip-card-inner" onClick="flipCard()">
+      <div class="flip-card-front">
+        <img src="assets/img/default.png" alt="Back gard image">
+      </div>
+      <div class="flip-card-back">
+        <!-- <h1>Title</h1> -->
+        <p>Text come here ...</p>
+      </div>
+    </div>
+    <div class="removeCard">Remove</div>
+  </div>
+
+  <div id="flipCardsLink">
+    <a href="/">
+      Home
+    </a>
+  </div>
+
+  <div id="homeScreen">
+    <div class="home-l">
+      <h1>Spanish flip cards</h1>
+    </div>
+    <div class="home-r">
+      <a href="#Pod101" class="home-btn">Let's go</a>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="app/scripts/services/pubSub.js"></script>
+  <script type="text/javascript" src="app/scripts/services/service.js"></script>
+  <script type="text/javascript" src="app/scripts/app.js"></script>
+  <script type="text/javascript" src="app/scripts/routes.js"></script>
+  <script type="text/javascript" src="app/scripts/modules/controls.js"></script>
+  <script type="text/javascript" src="app/scripts/modules/nav.js"></script>
+  <script type="text/javascript" src="app/scripts/modules/cards.js"></script>
+</body>
+
+</html>

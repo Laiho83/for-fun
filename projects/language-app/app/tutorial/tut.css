@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  color: #000;
+  background: #ffffff;
+}
+
+ul {
+  list-style: none;
+  margin: 0 10px;
+  padding: 0;
+}
+
+h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+h1 span {
+  display: block;
+}
+
+h2 {
+  margin: 0 0 15px;
+  font: 32px;
+}
+
+.page {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 25px;
+  text-align: center;  
+}
+
+.hero-unit {
+  width: 250px;
+  padding: 15px;
+  text-align: left;
+  background: #eaeaea;
+  margin: 0 auto;
+}
+
+#peopleModule {
+  padding: 25px 0;
+}
+
+button {
+  border: none;
+  padding: 5px 10px;
+  background: #00909e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#people {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+#people li {
+  width: 48%;
+  background: #aaeeb0;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px 0;
+}
+
+#people li .people-name {
+  padding: 2px 5px;
+  text-align: center;
+  flex: 1;
+}
+
+#people li .del {
+  padding: 0 7px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #00909e;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+#people li .del:hover {
+  background: #fff;
+  color: #00909e;
+}
+
+#template {
+  display: none;
+}

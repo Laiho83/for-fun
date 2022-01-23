@@ -1,0 +1,34 @@
+header#header {
+  height: 60px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+header#header nav{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Flip cards link */
+#flipCardsLink {
+  position: fixed;
+  right: 0;
+  top: 50%;  
+  background: var(--primary-color);
+  text-align: center;
+}
+
+#flipCardsLink a {
+  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;    
+  color: #ffffff;
+}
+
+#flipCardsLink a:hover {
+  background: var(--secondary-color);
+}

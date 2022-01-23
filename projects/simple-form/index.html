@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/variables.css">
+  <link rel="stylesheet" href="styles/forms.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Simple menu</title>  
+</head>
+<body>
+  <div id="page">
+      <aside class="aside">
+        <section class="ui">          
+          <input type="checkbox" class="ui__action"></input>
+          <div class="ui__menu">
+            <div class="ui__menu__toggle">
+              <div class="ui__menu__toggle-stripes"></div>
+            </div>
+          </div>            
+          <div class="ui__main">
+            <div class="ui__main__title">
+              <h2>This is title</h2>
+            </div>
+            <div class="ui__main__tabs">
+              <div class="ui__main__tabs--select ui__main__tabs--blue">
+                <span>Assigned to</span>
+              </div>
+              <div class="ui__main__tabs--select ui__main__tabs--orange">
+                <span>Status</span>
+              </div>
+              <div class="ui__main__tabs--select ui__main__tabs--green">
+                <span>Priority</span>
+              </div>
+              <div class="ui__main__tabs--select ui__main__tabs--dark">
+                <span>Due date</span>
+              </div>
+            </div>            
+            <div class="ui__main__description">
+              <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="Deescription"></textarea>
+            </div>
+            <div class="ui__main__attachments">              
+              <h3>Attachments:</h3>
+              <ul class="ui__main__attachments__list">
+                <li>
+                  <i class="ui__main__attachments__icon--pdf"></i>
+                  <p>File upload name 1</p>
+                  <i class="ui__main__attachments__list--delete ui__main__attachments__icon--delete"></i>
+                </li>
+                <li>
+                  <i class="ui__main__attachments__icon--img"></i>
+                  <p>File upload name 1</p>
+                  <i class="ui__main__attachments__list--delete ui__main__attachments__icon--delete"></i>   
+                </li>
+                <li>
+                  <i class="ui__main__attachments__icon--video"></i>
+                  <p>File upload name 1</p>
+                  <i class="ui__main__attachments__list--delete ui__main__attachments__icon--delete"></i>   
+                </li>
+                <li>
+                  <i class="ui__main__attachments__icon--files"></i>
+                  <p>File upload name 1</p>
+                  <i class="ui__main__attachments__list--delete ui__main__attachments__icon--delete"></i>   
+                </li>
+              </ul>
+              <div>
+                <label for="file__upload--attachment" class="ui__main__attachments__file">
+                  <i class="ui__main__attachments__icon--download"></i>Add Attachment
+                </label>              
+                <input id="file__upload--attachment" type="file"/>
+              </div>           
+            </div>
+            <footer class="ui__footer">
+              <button>
+                Save task
+              </button>
+            </footer>
+          </div>
+        </section>
+      </aside>
+  </div>
+</body>
+</html>
