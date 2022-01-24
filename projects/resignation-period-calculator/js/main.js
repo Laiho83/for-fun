@@ -1,6 +1,7 @@
 (function() {
   var form = {
     resignationDate: null,
+    officeDate: null,
     init() {
       this.cacheDom();
       this.bindEvents();
@@ -13,6 +14,7 @@
       this.leaveDays = document.getElementById('leaveDays');
       this.submitForm = document.getElementById('submitForm');
       this.result = document.getElementById('result');
+      this.officeDay = document.getElementById('officeDay');
     },
 
     bindEvents() {
@@ -21,6 +23,7 @@
     
     render() {
       result.value = this.resignationDate.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      officeDay.value = this.officeDay.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
     },
 
     renderInit() {
@@ -31,22 +34,42 @@
     onSubmit(e) {
       e.preventDefault();
       this.calculatePeriod().then(d => {
-        d.setDate(d.getDate() + Number(this.inputDays.value));
-        this.resignationDate = d;
-        this.calculateLeaveDays(d);
+        this.resignationDate = this.calculateLastOfficialDate(d);
+        this.officeDay = this.calculateLastOfficeDate(this.resignationDate);
         this.render();
       })
     },
 
     calculatePeriod() {
       return new Promise((res, rej) => {
-        let d = new Date(this.inputDate.value);
+        const d = new Date(this.inputDate.value);
         res(d);
       });
     },
 
-    calculateLeaveDays(d) {
-      let leaveDaysLeft = Math.ceil(Number(this.leaveDays.value) / 12) * Number(d.getMonth()+1);      
+    calculateLastOfficialDate(d) {
+      d.setDate(d.getDate() + Number(this.inputDays.value));
+      return d;
+    },
+
+    calculateLastOfficeDate(days) {
+      let of = new Date(days);
+      let leaveDaysLeft = Math.ceil((Number(this.leaveDays.value)) / 12 * Number(days.getMonth()+1));
+      console.log(days.getDate());
+      of.setDate(days.getDate() - leaveDaysLeft);
+
+
+      calc();
+
+      function calc() {
+        if(leaveDaysLeft > 1) {
+          of.setDate(of.getDate() - 1);
+          leaveDaysLeft = (of.getDay() === 0 || of.getDay() === 6) ? leaveDaysLeft : leaveDaysLeft - 1;
+          calc();
+        }
+      }
+
+      return of;
     }
   };
 

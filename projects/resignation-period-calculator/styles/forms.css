@@ -118,3 +118,10 @@ label {
   color: white;
   font-weight: bold;
 }
+
+#officeDay {
+  border: 0;
+  background: var(--green-color);
+  color: white;
+  font-weight: bold;
+}
