@@ -54,11 +54,6 @@
 
     calculateLastOfficialDate(d) {
       d.setDate(d.getDate() + Number(this.inputDays.value));
-      if(d.getDay() == 0) {
-        d.setDate(d.getDate() - 2);
-      } else if(d.getDay() == 6) {
-        d.setDate(d.getDate() - 1);
-      }
       return d;
     },
 
