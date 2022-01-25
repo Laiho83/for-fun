@@ -6,8 +6,7 @@
   border-radius: var(--border-radius);
 }
 
-input::placeholder,
-textarea::placeholder {
+input::placeholder {
   font-size: var(--base-font-size);
   line-height: var(--base-line-height);
   font-family: var(--base-font-family);
@@ -17,8 +16,7 @@ textarea::placeholder {
   letter-spacing: 2px;
 }
 
-input,
-textarea {
+input {
   width: 100%;
   height: 50px;
   margin-top: 5px;
@@ -42,8 +40,7 @@ textarea {
 
 input:focus,
 textarea:focus,
-input:focus:hover,
-textarea:focus:hover {
+input:focus:hover {
   outline: 0;
 }
 
@@ -54,13 +51,9 @@ textarea:disabled {
 }
 
 input:-webkit-autofill,
-textarea:-webkit-autofill,
 input:-webkit-autofill:hover,
-textarea:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-textarea:-webkit-autofill:focus,
 input:-webkit-autofill:active,
-textarea:-webkit-autofill:active,
   -webkit-box-shadow: 0 8px 16px rgb(78 95 124 / 16%) inset;
 }
 
@@ -109,14 +102,40 @@ button:disabled {
 }
 
 label {
+  position: relative;
   font-weight: bold;
 }
 
 #result {
-  border: 0;
-  background: var(--orange-color);
   color: white;
   font-weight: bold;
+  border: 0;
+  background: var(--orange-color);
+  box-shadow: 0 0 0 2px transparent, 0 0 0 2px var(--orange-color) inset;
+  outline: none;
+  transition: background-color 0.3s ease-in-out;   
+}
+
+label.result-active::after {    
+  content: '';
+  display: block;
+  position: absolute;
+  left: 35%;
+  top: 15%;
+  background: var(--orange-color);
+  animation: click-wave 1.5s;
+  z-index: 100;
+}
+
+label.office-active::after {    
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 15%;
+  background: var(--green-color);
+  animation: click-wave-2 1.5s;
+  z-index: 100;
 }
 
 #officeDay {
@@ -124,4 +143,36 @@ label {
   background: var(--green-color);
   color: white;
   font-weight: bold;
+}
+
+@keyframes click-wave {
+  0% {
+    height: 60px;
+    width: 300px;
+    opacity: 1;
+    position: absolute;
+  }
+  100% {
+    height: 180px;
+    width: 900px;
+    margin-left: -190px;
+    margin-top: -180px;
+    opacity: 0;
+  }
+}
+
+@keyframes click-wave-2 {
+  0% {
+    height: 60px;
+    width: 300px;
+    opacity: 1;
+    position: absolute;
+  }
+  100% {
+    height: 180px;
+    width: 900px;
+    margin-left: -190px;
+    margin-top: 180px;
+    opacity: 0;
+  }
 }

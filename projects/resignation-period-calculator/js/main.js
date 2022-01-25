@@ -14,7 +14,7 @@
       this.leaveDays = document.getElementById('leaveDays');
       this.submitForm = document.getElementById('submitForm');
       this.result = document.getElementById('result');
-      this.officeDay = document.getElementById('officeDay');
+      this.officeDaysLeft = document.getElementById('officeDay');
     },
 
     bindEvents() {
@@ -22,8 +22,10 @@
     },
     
     render() {
-      result.value = this.resignationDate.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      officeDay.value = this.officeDay.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      this.result.value = this.resignationDate.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      this.officeDaysLeft.value = this.officeDate.toLocaleDateString('sl-SL', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      this.result.parentElement.classList.add('result-active');      
+      this.officeDaysLeft.parentElement.classList.add('office-active');      
     },
 
     renderInit() {
@@ -35,7 +37,7 @@
       e.preventDefault();
       this.calculatePeriod().then(d => {
         this.resignationDate = this.calculateLastOfficialDate(d);
-        this.officeDay = this.calculateLastOfficeDate(this.resignationDate);
+        this.officeDate = this.calculateLastOfficeDate(this.resignationDate);
         this.render();
       })
     },
@@ -55,7 +57,6 @@
     calculateLastOfficeDate(days) {
       let of = new Date(days);
       let leaveDaysLeft = Math.ceil((Number(this.leaveDays.value)) / 12 * Number(days.getMonth()+1));
-      console.log(days.getDate());
       of.setDate(days.getDate() - leaveDaysLeft);
 
 
