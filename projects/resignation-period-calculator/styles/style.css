@@ -21,7 +21,8 @@ body {
   align-items: center;
   justify-content: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 25px;
   background: url(../assets/bg.jpg) center center / cover no-repeat fixed;
 }
 
