@@ -24,3 +24,16 @@ body {
   height: 100vh;
   background: url(../assets/bg.jpg) center center / cover no-repeat fixed;
 }
+
+span.error {
+  display: none;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #cc0002;
+}
+
+span.error.active {
+  display: block;
+  color: #cc0002;
+}
