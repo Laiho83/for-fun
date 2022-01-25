@@ -20,10 +20,16 @@
         Resignation notice period: 
         <input type="number" id="resDays" min="1" value="1">
       </label>
-      <label>
-        Yearly holiday leave left (days):
-        <input type="number" id="leaveDays" min="0" value="0">
-      </label>
+      <div class="col-wrap">
+        <label>
+          Yearly leave left:
+          <input type="number" id="leaveDays" min="0" value="0">
+        </label>
+        <label>
+          Extra free days:
+          <input type="number" id="extra" min="0" value="0">
+        </label>
+      </div>
       <label>
         Official last day at the Company
         <input type="text" id="result" readonly>

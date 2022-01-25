@@ -6,6 +6,16 @@
   border-radius: var(--border-radius);
 }
 
+.col-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.col-wrap > *{
+  width: 48%;
+}
+
 input::placeholder {
   font-size: var(--base-font-size);
   line-height: var(--base-line-height);
