@@ -53,7 +53,7 @@
     },
 
     calculateLastOfficialDate(d) {
-      d.setDate(d.getDate() + Number(this.inputDays.value));
+      d.setDate(d.getDate() + (Number(this.inputDays.value) + 1));
       return d;
     },
 
